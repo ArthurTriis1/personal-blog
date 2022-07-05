@@ -1,0 +1,44 @@
+backend:
+  name: github
+  repo: ArthurTriis1/personal-blog
+  branch: main
+  site_domain: personal-blog-arthur.netlify.app
+
+publish_mode: editorial_workflow
+local_backend: true
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: "posts"
+    label: "Posts"
+    folder: "markups/collections/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+        label: "Template Key",
+        name: "templateKey",
+        widget: "hidden",
+        default: "posts",
+        }
+      - { label: Title, name: title, widget: string }
+      - { label: Thumb, name: thumb, widget: image }
+      - { label: Text, name: body, widget: markdown }
+
+    
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "markups/pages/index.md"
+        label: "Landing Page"
+        name: "index"
+        fields:
+          - {
+            label: "Template Key",
+            name: "templateKey",
+            widget: "hidden",
+            default: "index-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: Image, name: image, widget: image }
