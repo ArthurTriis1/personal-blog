@@ -2,7 +2,7 @@
 module.exports = {
   siteMetadata: {
     title: `Meu Blog`,
-    siteUrl: `https://personal-blog-arthur.netlify.app`
+    siteUrl: `https://arthur-personal-blog.netlify.app`
   },
   plugins: [
         {
