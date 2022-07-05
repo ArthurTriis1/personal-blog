@@ -2,7 +2,7 @@ backend:
   name: github
   repo: ArthurTriis1/personal-blog
   branch: main
-  site_domain: personal-blog-arthur.netlify.app
+  site_domain: https://arthur-personal-blog.netlify.app
 
 publish_mode: editorial_workflow
 local_backend: true
