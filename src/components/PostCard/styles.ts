@@ -1,8 +1,9 @@
 import { Link } from 'gatsby'
+import styled from 'styled-components'
 import tw from 'twin.macro'
 
 export const WrapperLink = tw(Link)`
-    w-full md:w-96 rounded my-3 md:m-3
+    w-full rounded my-3 md:m-3 md:w-fit
 `
 
 export const Wrapper = tw.div`
@@ -13,12 +14,24 @@ export const DataWrapper = tw.div`
     px-6 py-4
 `
 
-export const Title = tw.h1`
-    font-bold text-xl mb-2
+export const Title = styled.h1`
+  ${tw`
+    text-primary text-xl mb-2 font-default font-bold 
+    `}
 `
 
 export const Time = tw.span`
-    inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2
+    inline-block
+    bg-accent
+    rounded-full 
+    px-3 
+    py-1 
+    text-sm 
+    font-default
+    font-semibold 
+    text-primary
+    mr-2 
+    mb-2
 `
 
 export const TimeWrapper = tw.span`
