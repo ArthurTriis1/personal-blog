@@ -1,18 +1,16 @@
-import React, { ReactNode } from 'react';
-import { StyleSheetManager } from 'styled-components';
+import React, { ReactNode } from 'react'
+import { StyleSheetManager } from 'styled-components'
 
 type WithStyledProps = {
-    children: ReactNode
+  children: ReactNode
 }
 
 const WithStyled = ({ children }: WithStyledProps) => {
-    const iframe = document.getElementById("preview-pane") as HTMLIFrameElement
-    const iframeHeadElem = iframe?.contentDocument?.head;
-    return (
-        <StyleSheetManager target={iframeHeadElem}>
-            {children}
-        </StyleSheetManager>
-    )
+  const iframe = document.getElementById('preview-pane') as HTMLIFrameElement
+  const iframeHeadElem = iframe?.contentDocument?.head
+  return (
+    <StyleSheetManager target={iframeHeadElem}>{children}</StyleSheetManager>
+  )
 }
 
-export default WithStyled;
+export default WithStyled

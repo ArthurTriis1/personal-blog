@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react'
 import { GlobalStyles } from 'twin.macro'
 
 type LayoutProps = {
-    children: ReactNode
+  children: ReactNode
 }
 
 const Layout = ({ children }: LayoutProps) => (

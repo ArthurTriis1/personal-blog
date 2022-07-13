@@ -1,5 +1,5 @@
-import { GatsbyImage } from "gatsby-plugin-image";
-import tw from "twin.macro";
+import { GatsbyImage } from 'gatsby-plugin-image'
+import tw from 'twin.macro'
 
 export const GImage = tw(GatsbyImage)`
     h-96

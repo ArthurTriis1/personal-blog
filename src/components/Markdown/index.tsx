@@ -1,6 +1,6 @@
-import React, { HTMLAttributes } from "react";
-import styled from "styled-components";
-import tw from "twin.macro";
+import React, { HTMLAttributes } from 'react'
+import styled from 'styled-components'
+import tw from 'twin.macro'
 
 const MarkdownWrapper = tw.div`
     flex
@@ -9,252 +9,247 @@ const MarkdownWrapper = tw.div`
     flex-col
     overflow-x-hidden
 `
-    
 
 const MarkdownContent = styled.div`
-    ${tw`
+  ${tw`
         w-full
         p-4
         md:w-4/5
     `}
 
-    * {
-        word-break: break-all;
-    }
+  * {
+    word-break: break-all;
+  }
 
-
-    @media print {
+  @media print {
     *,
     *:before,
     *:after {
-        background: transparent !important;
-        color: #000 !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
+      background: transparent !important;
+      color: #000 !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
     }
 
     a,
     a:visited {
-        text-decoration: underline;
+      text-decoration: underline;
     }
 
     a[href]:after {
-        content: " (" attr(href) ")";
+      content: ' (' attr(href) ')';
     }
 
     abbr[title]:after {
-        content: " (" attr(title) ")";
+      content: ' (' attr(title) ')';
     }
 
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
+    a[href^='#']:after,
+    a[href^='javascript:']:after {
+      content: '';
     }
 
     pre,
     blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
+      border: 1px solid #999;
+      page-break-inside: avoid;
     }
 
     thead {
-        display: table-header-group;
+      display: table-header-group;
     }
 
     tr,
     img {
-        page-break-inside: avoid;
+      page-break-inside: avoid;
     }
 
     img {
-        max-width: 100% !important;
+      max-width: 100% !important;
     }
 
     p,
     h2,
     h3 {
-        orphans: 3;
-        widows: 3;
+      orphans: 3;
+      widows: 3;
     }
 
     h2,
     h3 {
-        page-break-after: avoid;
-
+      page-break-after: avoid;
     }
-    }
+  }
 
-    html {
+  html {
     font-size: 12px;
-    }
+  }
 
-    @media screen and (min-width: 32rem) and (max-width: 48rem) {
+  @media screen and (min-width: 32rem) and (max-width: 48rem) {
     html {
-        font-size: 15px;
+      font-size: 15px;
     }
-    }
+  }
 
-    @media screen and (min-width: 48rem) {
+  @media screen and (min-width: 48rem) {
     html {
-        font-size: 16px;
+      font-size: 16px;
     }
-    }
+  }
 
-    body {
+  body {
     line-height: 1.85;
-    }
+  }
 
-    p,
-    .splendor-p {
+  p,
+  .splendor-p {
     font-size: 1rem;
     margin-bottom: 1.3rem;
-    }
+  }
 
-    h1,
-    .splendor-h1,
-    h2,
-    .splendor-h2,
-    h3,
-    .splendor-h3,
-    h4,
-    .splendor-h4 {
-    margin: 1.414rem 0 .5rem;
+  h1,
+  .splendor-h1,
+  h2,
+  .splendor-h2,
+  h3,
+  .splendor-h3,
+  h4,
+  .splendor-h4 {
+    margin: 1.414rem 0 0.5rem;
     font-weight: inherit;
     line-height: 1.42;
-    }
+  }
 
-    h1,
-    .splendor-h1 {
+  h1,
+  .splendor-h1 {
     margin-top: 0;
     font-size: 3.998rem;
-    }
+  }
 
-    h2,
-    .splendor-h2 {
+  h2,
+  .splendor-h2 {
     font-size: 2.827rem;
-    }
+  }
 
-    h3,
-    .splendor-h3 {
+  h3,
+  .splendor-h3 {
     font-size: 1.999rem;
-    }
+  }
 
-    h4,
-    .splendor-h4 {
+  h4,
+  .splendor-h4 {
     font-size: 1.414rem;
-    }
+  }
 
-    h5,
-    .splendor-h5 {
+  h5,
+  .splendor-h5 {
     font-size: 1.121rem;
-    }
+  }
 
-    h6,
-    .splendor-h6 {
-    font-size: .88rem;
-    }
+  h6,
+  .splendor-h6 {
+    font-size: 0.88rem;
+  }
 
-    small,
-    .splendor-small {
-    font-size: .707em;
-    }
+  small,
+  .splendor-small {
+    font-size: 0.707em;
+  }
 
-    /* https://github.com/mrmrs/fluidity */
+  /* https://github.com/mrmrs/fluidity */
 
-    img,
-    canvas,
-    iframe,
-    video,
-    svg,
-    select,
-    textarea {
+  img,
+  canvas,
+  iframe,
+  video,
+  svg,
+  select,
+  textarea {
     max-width: 100%;
-    }
+  }
 
-    @import url(http://fonts.googleapis.com/css?family=Merriweather:300italic,300);
+  @import url(http://fonts.googleapis.com/css?family=Merriweather:300italic,300);
 
-    html {
+  html {
     font-size: 18px;
     max-width: 100%;
-    }
+  }
 
-    body {
+  body {
     color: #444;
     font-family: 'Merriweather', Georgia, serif;
     margin: 0;
     max-width: 100%;
-    }
+  }
 
-    /* === A bit of a gross hack so we can have bleeding divs/blockquotes. */
+  /* === A bit of a gross hack so we can have bleeding divs/blockquotes. */
 
-    p,
-    *:not(div):not(img):not(body):not(html):not(li):not(blockquote):not(p) {
+  p,
+  *:not(div):not(img):not(body):not(html):not(li):not(blockquote):not(p) {
     margin: 1rem auto 1rem;
     max-width: 36rem;
-    padding: .25rem;
-    }
+    padding: 0.25rem;
+  }
 
-    div {
+  div {
     width: 100%;
-    }
+  }
 
-    div img {
+  div img {
     width: 100%;
-    }
+  }
 
-    blockquote p {
+  blockquote p {
     font-size: 1.5rem;
     font-style: italic;
     margin: 1rem auto 1rem;
     max-width: 48rem;
-    }
+  }
 
-    li {
+  li {
     margin-left: 2rem;
-    }
+  }
 
-    /* Counteract the specificity of the gross *:not() chain. */
+  /* Counteract the specificity of the gross *:not() chain. */
 
-    h1 {
+  h1 {
     padding: 4rem 0 !important;
-    }
+  }
 
-    /*  === End gross hack */
+  /*  === End gross hack */
 
-    p {
+  p {
     color: #555;
     height: auto;
     line-height: 1.45;
-    }
+  }
 
-    pre,
-    code {
-    font-family: Menlo, Monaco, "Courier New", monospace;
-    }
+  pre,
+  code {
+    font-family: Menlo, Monaco, 'Courier New', monospace;
+  }
 
-    pre {
+  pre {
     background-color: #fafafa;
-    font-size: .8rem;
+    font-size: 0.8rem;
     overflow-x: scroll;
     padding: 1.125em;
-    }
+  }
 
-    a,
-    a:visited {
+  a,
+  a:visited {
     color: #3498db;
-    }
+  }
 
-    a:hover,
-    a:focus,
-    a:active {
+  a:hover,
+  a:focus,
+  a:active {
     color: #2980b9;
-    }
+  }
 `
 
-
-
 export const Markdown = (props: HTMLAttributes<HTMLDivElement>) => (
-    <MarkdownWrapper>
-        <MarkdownContent {...props} />
-    </MarkdownWrapper>
+  <MarkdownWrapper>
+    <MarkdownContent {...props} />
+  </MarkdownWrapper>
 )

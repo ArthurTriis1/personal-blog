@@ -1,47 +1,41 @@
-import { graphql } from 'gatsby';
-import React from 'react';
-import Image from '../components/Image';
-import PostTemplate from '../templates/PostTemplate';
+import { graphql } from 'gatsby'
+import React from 'react'
 
-// import { Container } from './styles';
+import PostTemplate from '../templates/PostTemplate'
 
-const PostGeneratedTemplate: React.FC = ({data}: any) => {
-    const {
-        markdownRemark: {
-            frontmatter: {
-                title,
-                thumb : {
-                    childImageSharp: {
-                        gatsbyImageData
-                    }
-                }
-            },
-            html
-        }
-    } = data
-    return (
+const PostGeneratedTemplate: React.FC = ({ data }: any) => {
+  const {
+    markdownRemark: {
+      frontmatter: {
+        title,
+        thumb: {
+          childImageSharp: { gatsbyImageData },
+        },
+      },
+      html,
+    },
+  } = data
+  return (
     <>
-        <PostTemplate html={html} thumb={gatsbyImageData} title={title}/>
+      <PostTemplate html={html} thumb={gatsbyImageData} title={title} />
     </>
-    );
+  )
 }
 
-export default PostGeneratedTemplate;
-
+export default PostGeneratedTemplate
 
 export const pageQuery = graphql`
-query getPostDetailsBySlug($slug: String!) {
-  markdownRemark(fields: {slug: {eq: $slug}}) {
-    frontmatter {
-      title
-      thumb {
-        childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH)
+  query getPostDetailsBySlug($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        thumb {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
         }
       }
+      html
     }
-    html
   }
-}
-
-`;
+`

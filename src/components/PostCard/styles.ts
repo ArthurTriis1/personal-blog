@@ -1,5 +1,5 @@
-import { Link } from "gatsby";
-import tw from "twin.macro";
+import { Link } from 'gatsby'
+import tw from 'twin.macro'
 
 export const WrapperLink = tw(Link)`
     w-full md:w-96 rounded my-3 md:m-3
